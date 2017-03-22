@@ -1,0 +1,10 @@
+html
+    head
+        title= word
+        link(rel='stylesheet', href='/css/definition.css')
+    body
+        div(class='text-center')
+            div(id='hidden-word')= word
+            div(id='word')= word
+            div(id='definition')= definition
+        script(src='/js/definition.js')
