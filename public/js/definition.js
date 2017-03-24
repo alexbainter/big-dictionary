@@ -5,13 +5,15 @@
     });
 
     function findMaxWidth(el) {
-        var lastSize = 1
-        var size = lastSize;
+        return new Promise((resolve, reject) => {
+
+        })
+        var size = 1;
         var unit = 'vw';
         do {
-            var lastSize = size;
-            el.style['font-size'] = size++ + unit;
+            size = size + 1;
+            el.style['font-size'] = size + unit;
         } while (el.scrollWidth < window.innerWidth)
-        el.style['font-size'] = lastSize + unit;
+        el.style['font-size'] = (size - 1) + unit;
     }
 })();
