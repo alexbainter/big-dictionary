@@ -1,24 +1,8 @@
-const dictionary = [
-    {
-        word: 'lorem',
-        definition: 'Lorem ipsum sit dolor amet'
-    },
-    {
-        word: 'ipsum',
-        definition: 'Lorem ipsum sit dolor amet'
-    }
-];
+const wordsApiDictionary = require('./dictionaries/words-api-dictionary.stamp')();
 
-function getDefinition(queryWord) {
-    queryWord = queryWord.toLowerCase();
-    let match;
-    const matchFound = dictionary.some((entry) => {
-        match = entry;
-        return entry.word === queryWord;
-    });
-    if (matchFound) {
-        return match;
-    }
+function getDefinition(word) {
+    word = word.toLowerCase();
+    return wordsApiDictionary.getDefinitions(word).then((result) => result.data);
 }
 
 module.exports = {

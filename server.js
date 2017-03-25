@@ -12,13 +12,12 @@ app.get('/', (req, res) => {
     res.send('Nothing here...')
 });
 
-app.get('/:word', (req, res) => {
-    const definition = getDefinition(req.params.word);
-    if (definition) {
-        res.render('definition', definition);
-    } else {
-        res.send('Not found!')
-    }
+app.get('/define/:word', (req, res) => {
+    getDefinition(req.params.word).then((result) => {
+        res.render('definition', result);
+    }).catch((err) => {
+        res.send('Not found!');
+    })
 });
 
 app.listen(port, () => {

@@ -6,5 +6,7 @@ html
         div(class='text-center')
             div(id='hidden-word', class='hidden inline-block-display')= word
             div(id='word', class='hidden inline-block-display js-unhide-after-init')= word
-            div(id='definition', class='hidden inline-block-display js-unhide-after-init')= definition
+            ul
+                each definition in definitions
+                    li(class='definition hidden js-unhide-after-init')= definition.definition
         script(src='/build/bundle.js')

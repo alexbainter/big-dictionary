@@ -23,7 +23,8 @@ function findMaxWidth(el) {
         do {
             size = size + 1;
             el.css('font-size', size + widthUnit);
-        } while (el.outerWidth() < window.innerWidth)
+        } while (el.outerWidth() < window.innerWidth
+            && el.outerHeight() < window.innerHeight / 2)
         resolve(size - 1);
     });
 }
