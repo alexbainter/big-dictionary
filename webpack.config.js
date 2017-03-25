@@ -5,7 +5,7 @@ module.exports = {
     devtool: 'source-map',
     entry: path.resolve(__dirname, 'public', 'src', 'definition.js'),
     output: {
-        path: path.resolve(__dirname, 'public', 'dist'),
+        path: path.resolve(__dirname, 'public', 'build'),
         filename: 'bundle.js'
     },
     module: {

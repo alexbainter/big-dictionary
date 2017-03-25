@@ -1,10 +1,10 @@
 html
     head
         title= word
-        link(rel='stylesheet', href='/css/definition.css')
+        link(rel='stylesheet', href='/build/styles.css')
     body
         div(class='text-center')
-            div(id='hidden-word')= word
-            div(id='word')= word
-            div(id='definition')= definition
-        script(src='/js/definition.js')
+            div(id='hidden-word', class='hidden inline-block-display')= word
+            div(id='word', class='hidden inline-block-display js-unhide-after-init')= word
+            div(id='definition', class='hidden inline-block-display js-unhide-after-init')= definition
+        script(src='/build/bundle.js')
