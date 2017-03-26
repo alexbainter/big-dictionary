@@ -2,10 +2,11 @@ html
     head
         title= word
         link(rel='stylesheet', href='/build/styles.css')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Halant')
     body
         div(class='text-center')
-            div(id='hidden-word', class='hidden inline-block-display')= word
-            div(id='word', class='hidden inline-block-display js-unhide-after-init max-half-height')= word
+            div(id='hidden-word', class='hidden inline-block-display fancy-font')= word
+            div(id='word', class='hidden inline-block-display js-unhide-after-init max-half-height fancy-font')= word
         ul(class='definitions-list')
             each definition in definitions
                 li(class='definition hidden js-unhide-after-init')

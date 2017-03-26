@@ -1,3 +1,7 @@
+.fancy-font {
+    font-family: 'Halant', serif;
+}
+
 .inline-block-display {
     display:inline-block;
 }
@@ -21,7 +25,6 @@
 .definition {
     padding-top: 1em;
     &__part {
-        //font-style: italic;
         width: 7em;
         display: inline-block;
     }
