@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     res.send('Nothing here...')
 });
 
-app.get('/define/:word', (req, res) => {
+app.get('/:word', (req, res) => {
     getDefinition(req.params.word).then((result) => {
         res.render('definition', result);
     }).catch((err) => {
