@@ -5,8 +5,10 @@ html
     body
         div(class='text-center')
             div(id='hidden-word', class='hidden inline-block-display')= word
-            div(id='word', class='hidden inline-block-display js-unhide-after-init')= word
-            ul
-                each definition in definitions
-                    li(class='definition hidden js-unhide-after-init')= definition.definition
+            div(id='word', class='hidden inline-block-display js-unhide-after-init max-half-height')= word
+        ul(class='definitions-list')
+            each definition in definitions
+                li(class='definition hidden js-unhide-after-init')
+                    span(class='definition__part')= definition.partOfSpeech
+                    span(class='definition__text')= definition.definition
         script(src='/build/bundle.js')

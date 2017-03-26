@@ -13,3 +13,20 @@
 .no-display {
     display: none;
 }
+
+.definitions-list {
+    list-style-type: none;
+}
+
+.definition {
+    padding-top: 1em;
+    &__part {
+        //font-style: italic;
+        width: 7em;
+        display: inline-block;
+    }
+}
+
+.max-half-height {
+    max-height: 50%;
+}
