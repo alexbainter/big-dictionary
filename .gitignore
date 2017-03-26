@@ -3,3 +3,5 @@ node_modules
 public/build
 
 private.config.js
+
+npm-debug.log
