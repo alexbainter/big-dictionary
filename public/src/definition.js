@@ -30,16 +30,14 @@ function setWordWidth() {
 
 function findMaxWidth(el) {
     return new Promise((resolve, reject) => {
+        const maxWidth = window.outerWidth;
+        const maxHeight = window.outerHeight / 2;
         let size = 1;
         do {
             size = size + 1;
             el.css('font-size', size + widthUnit);
-        } while (el.outerWidth() < window.innerWidth
-            && el.outerHeight() < maxWordHeight())
+        } while (el.outerWidth() < maxWidth
+            && el.outerHeight() < maxHeight)
         resolve(size - 2);
     });
-}
-
-function maxWordHeight() {
-    return window.innerHeight / 2;
 }
