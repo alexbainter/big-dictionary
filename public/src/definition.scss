@@ -1,9 +1,9 @@
-.fancy-font {
+body {
     font-family: 'Halant', serif;
 }
 
 .inline-block-display {
-    display:inline-block;
+    display: inline-block;
 }
 
 .text-center {
@@ -19,17 +19,40 @@
 }
 
 .definitions-list {
-    list-style-type: none;
+    width: 80%;
+    margin: auto;
+    font-size: 1.25rem;
 }
 
 .definition {
-    padding-top: 1em;
+    padding-top: 1rem;
+    overflow: auto;
+
     &__part {
-        width: 7em;
+        width: 15%;
         display: inline-block;
+    }
+    &__text {
+        width: 85%;
+        float: right;
     }
 }
 
 .max-half-height {
     max-height: 50%;
+}
+
+@media screen and (max-width: 700px) {
+    .definitions-list {
+        width: 95%;
+    }
+
+    .definition {
+        &__part {
+            width: 25%;
+        }
+        &__text {
+            width: 75%;
+        }
+    }
 }
