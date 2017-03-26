@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "someth",
   "scripts": {
+    "dev": "concurrently \"webpack --watch \" \"node server\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alex Bainter",
@@ -21,6 +22,7 @@
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.2.2",
+    "concurrently": "^3.4.0",
     "css-loader": "^0.27.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "node-sass": "^4.5.1",
