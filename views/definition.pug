@@ -1,15 +1,16 @@
 html
     head
         title= word
+        meta(name="viewport" content="width=device-width")
         link(rel='stylesheet', href='/build/styles.css')
         link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Halant')
     body
         div(class='text-center')
-            div(id='hidden-word', class='hidden inline-block-display fancy-font')= word
-            div(id='word', class='hidden inline-block-display js-unhide-after-init max-half-height fancy-font')= word
-        ul(class='definitions-list')
+            div(id='hidden-word', class='hidden inline-block-display')= word
+            div(id='word', class='hidden js-unhide-after-init max-half-height inline-block-display')= word
+        div(class='definitions-list')
             each definition in definitions
-                li(class='definition hidden js-unhide-after-init')
-                    span(class='definition__part')= definition.partOfSpeech
-                    span(class='definition__text')= definition.definition
+                div(class='definition hidden js-unhide-after-init')
+                    div(class='definition__part')= definition.partOfSpeech
+                    div(class='definition__text')= definition.definition
         script(src='/build/bundle.js')
