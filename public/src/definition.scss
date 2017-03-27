@@ -1,3 +1,5 @@
+@import '_text-colors.scss';
+
 body {
     font-family: 'Halant', serif;
 }
@@ -32,6 +34,9 @@ body {
         width: 15%;
         display: inline-block;
     }
+
+    @include text-colors(#{&}__part);
+
     &__text {
         width: 85%;
         float: right;
@@ -40,6 +45,16 @@ body {
 
 .max-half-height {
     max-height: 50%;
+}
+
+.pronunciation {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #999;
+}
+
+#word {
+    line-height: 1;
 }
 
 @media screen and (max-width: 700px) {
