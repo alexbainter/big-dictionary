@@ -6,7 +6,7 @@ const Dictionary = require('./dictionary.stamp');
 const baseURL = 'https://wordsapiv1.p.mashape.com/words/';
 
 function getDefinitions(word) {
-    return axios.get(`${baseURL}${word}/definitions`, {
+    return axios.get(`${baseURL}${word}`, {
         headers: {
             'Accept': 'application/json',
             'X-Mashape-Key': mashapeKey
