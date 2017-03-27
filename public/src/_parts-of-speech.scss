@@ -1,0 +1,18 @@
+$partsOfSpeech: (
+    noun: #B71C1C,
+    pronoun: #4A148C,
+    verb: #1A237E,
+    adjective: #01579B,
+    adverb: #004D40,
+    preposition: #33691E,
+    conjunction: #F57F17,
+    interjection: #BF360C
+);
+
+@mixin parts-of-speech($className) {
+    @each $partOfSpeech, $color in $partsOfSpeech {
+        #{$className + '--' + $partOfSpeech} {
+            color: $color;
+        }
+    }
+}
