@@ -1,4 +1,4 @@
-@import '_text-colors.scss';
+@import '_parts-of-speech.scss';
 
 body {
     font-family: 'Halant', serif;
@@ -35,7 +35,7 @@ body {
         display: inline-block;
     }
 
-    @include text-colors(#{&}__part);
+    @include parts-of-speech(#{&}__part);
 
     &__text {
         width: 85%;
@@ -48,7 +48,7 @@ body {
 }
 
 .pronunciation {
-    margin-top: 1rem;
+    margin: 1rem 0;
     font-size: 1.25rem;
     color: #999;
 }
@@ -64,10 +64,10 @@ body {
 
     .definition {
         &__part {
-            width: 25%;
+            width: 35%;
         }
         &__text {
-            width: 75%;
+            width: 65%;
         }
     }
 }
