@@ -54,10 +54,6 @@ a {
     }
 }
 
-.max-half-height {
-    max-height: 50%;
-}
-
 .pronunciation {
     margin: 1rem 0;
     font-size: 1.25rem;
@@ -67,6 +63,7 @@ a {
 #word {
     line-height: 1;
     overflow: hidden;
+    max-height: 50%;
 }
 
 @media screen and (max-width: 700px) {
