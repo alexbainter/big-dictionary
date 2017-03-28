@@ -1,0 +1,6 @@
+mixin safeLink(word)
+    - var href = word.replace(/[^a-z]/gi, '')
+    if href.trim()
+        a(href=href)= word
+    else
+        word

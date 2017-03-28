@@ -1,3 +1,5 @@
+include ./mixins/safe-link.pug
+
 html
     head
         title= word
@@ -12,6 +14,11 @@ html
         div(class='definitions-list')
             each definition in results
                 div(class='definition hidden js-unhide-after-init')
-                    div(class='definition__part definition__part--' + definition.partOfSpeech)= definition.partOfSpeech
-                    div(class='definition__text')= definition.definition
+                    div(class='definition__part definition__part--' + definition.partOfSpeech)
+                        a(href='/' + definition.partOfSpeech)= definition.partOfSpeech
+                    div(class='definition__text')
+                        - var words = definition.definition.split(' ')
+                        each word in words
+                            +safeLink(word)
+                            span= ' '
         script(src='/build/bundle.js')
