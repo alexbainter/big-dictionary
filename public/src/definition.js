@@ -38,6 +38,6 @@ function findMaxWidth(el) {
             el.css('font-size', size + widthUnit);
         } while (el.outerWidth() < maxWidth
             && el.outerHeight() < maxHeight)
-        resolve(size - 2);
+        resolve(size - 3);
     });
 }
