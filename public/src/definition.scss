@@ -1,7 +1,18 @@
 @import '_parts-of-speech.scss';
 
+$lightGrey: #999;
+
 body {
     font-family: 'Halant', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: $lightGrey;
+    }
 }
 
 .inline-block-display {
@@ -50,11 +61,12 @@ body {
 .pronunciation {
     margin: 1rem 0;
     font-size: 1.25rem;
-    color: #999;
+    color: $lightGrey;
 }
 
 #word {
     line-height: 1;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 700px) {
