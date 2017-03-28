@@ -1,12 +1,12 @@
 $partsOfSpeech: (
     noun: #B71C1C,
-    pronoun: #4A148C,
+    pronoun: #BF360C,
     verb: #1A237E,
-    adjective: #01579B,
+    adjective: #33691E,
     adverb: #004D40,
-    preposition: #33691E,
+    preposition: #01579B,
     conjunction: #F57F17,
-    interjection: #BF360C
+    interjection: #4A148C
 );
 
 @mixin parts-of-speech($className) {
