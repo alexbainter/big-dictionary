@@ -9,7 +9,7 @@ app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.send('Nothing here...')
+    res.redirect('/welcome');
 });
 
 app.get('/:word', (req, res) => {
