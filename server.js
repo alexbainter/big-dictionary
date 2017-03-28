@@ -1,5 +1,5 @@
 const express = require('express');
-const { getDefinition } = require('./dictionary-integration');
+const { getDefinition } = require('./lib/dictionary-integration');
 const app = express();
 const port = 8080;
 
@@ -13,7 +13,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/:word', (req, res) => {
-    getDefinition(req.params.word).then((result) => {
+    const word = req.params.word.replace(/[^a-z]/gi, '');
+    getDefinition(word).then((result) => {
         res.render('definition', result);
     }).catch((err) => {
         res.send('Not found!');
