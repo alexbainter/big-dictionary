@@ -1,0 +1,8 @@
+include ./safe-link.pug
+
+mixin linkifier(text)
+    - var words = text.split(' ')
+    each word in words
+        +safeLink(word)
+        span= ' '
+    

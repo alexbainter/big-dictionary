@@ -1,4 +1,4 @@
-include ./mixins/safe-link.pug
+include ./mixins/linkifier.pug
 
 html
     head
@@ -17,8 +17,5 @@ html
                     div(class='definition__part definition__part--' + definition.partOfSpeech)
                         a(href='/' + definition.partOfSpeech)= definition.partOfSpeech
                     div(class='definition__text')
-                        - var words = definition.definition.split(' ')
-                        each word in words
-                            +safeLink(word)
-                            span= ' '
+                        +linkifier(definition.definition)
         script(src='/build/bundle.js')
