@@ -1,5 +1,6 @@
 const express = require('express');
 const { getDefinition } = require('./lib/dictionary-integration');
+const greetings = require('./lib/greetings');
 const app = express();
 const port = 8080;
 
@@ -9,7 +10,8 @@ app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.redirect('/welcome');
+    const randomGreeting = greetings[Math.floor(Math.random()*greetings.length)];
+    res.redirect('/' + randomGreeting);
 });
 
 app.get('/:word', (req, res) => {
