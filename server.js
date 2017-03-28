@@ -2,7 +2,7 @@ const express = require('express');
 const { getDefinition } = require('./lib/dictionary-integration');
 const greetings = require('./lib/greetings');
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.set('views', './views');
 app.set('view engine', 'pug');
