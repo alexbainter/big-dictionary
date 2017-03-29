@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.redirect('/' + randomGreeting);
 });
 
-app.get('/:word', (req, res, next) => {
+app.get('/:word', (req, res) => {
     const word = req.params.word.replace(/[^a-z]/gi, '');
     getDefinition(word).then((result) => {
         res.render('definition', result);
@@ -23,6 +23,14 @@ app.get('/:word', (req, res, next) => {
             res.render('not-found', { word });
         }
     })
+});
+
+app.get('*', (req, res) => {
+    res.redirect('/no');
+});
+
+app.use((err, req, res, next) => {
+    res.send('Sorry, something went wrong.');
 });
 
 app.listen(port, () => {
