@@ -1,0 +1,17 @@
+include ./mixins/linkifier.pug
+
+html
+    head
+        title= word
+        meta(name="viewport" content="width=device-width")
+        link(rel='stylesheet', href='/build/styles.css')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Halant')
+    body
+        main(class='content')
+            div(class='text-center')
+                p
+                    +linkifier('Sorry, a definition could not be found for '+ word)
+        footer(class='text-center')
+            +linkifier('made by')
+            a(href='http://alexbainter.com')= 'alex bainter'
+        script(src='/build/bundle.js')

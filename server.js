@@ -14,12 +14,14 @@ app.get('/', (req, res) => {
     res.redirect('/' + randomGreeting);
 });
 
-app.get('/:word', (req, res) => {
+app.get('/:word', (req, res, next) => {
     const word = req.params.word.replace(/[^a-z]/gi, '');
     getDefinition(word).then((result) => {
         res.render('definition', result);
     }).catch((err) => {
-        res.send('Not found!');
+        if (err.response.status === 404) {
+            res.render('not-found', { word });
+        }
     })
 });
 
