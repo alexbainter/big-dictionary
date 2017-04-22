@@ -1,0 +1,18 @@
+include ./mixins/linkifier.pug
+
+block variables
+    
+html
+    head
+        title= title + ' | reallybigdictionary'
+        meta(name="viewport" content="width=device-width")
+        link(rel='stylesheet', href='/build/styles.css')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Halant')
+    body
+        main(class='content')
+            block content
+        footer(class='text-center')
+            +linkifier('made by')
+            a(href='http://alexbainter.com')= 'alex bainter'
+        script(src='/build/bundle.js')
+        script(src='/google-analytics.js')
