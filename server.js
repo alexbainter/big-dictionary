@@ -1,7 +1,9 @@
 const express = require('express');
 const compression = require('compression');
+const throttle = require('express-throttle');
 const { getDefinition } = require('./lib/dictionary-integration');
 const greetings = require('./lib/greetings');
+const throttleOptions = require('./config/throttle.config');
 const app = express();
 const port = process.env.PORT || 8080;
 
@@ -17,7 +19,7 @@ app.get('/', (req, res) => {
     res.redirect('/' + randomGreeting);
 });
 
-app.get('/:word', (req, res) => {
+app.get('/:word', throttle(throttleOptions), (req, res) => {
     const word = req.params.word.replace(/[^a-z]/gi, '');
     getDefinition(word).then((result) => {
         res.render('definition', result);
