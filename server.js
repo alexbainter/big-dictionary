@@ -6,10 +6,10 @@ const greetings = require('./lib/greetings');
 const app = express();
 const port = process.env.PORT || 8080;
 const throttleOptions = {
-    burst: '50',
+    burst: 50,
     period: 'hour',
     on_throttled: (req, res, next, bucket) => {
-        
+        res.render('throttled');
     }
 }
 
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     res.redirect('/' + randomGreeting);
 });
 
-app.get('/:word', (req, res) => {
+app.get('/:word', throttle(throttleOptions), (req, res) => {
     const word = req.params.word.replace(/[^a-z]/gi, '');
     getDefinition(word).then((result) => {
         res.render('definition', result);
