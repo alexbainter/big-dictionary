@@ -1,25 +1,18 @@
+extends layout.pug
 include ./mixins/linkifier.pug
-include ./mixins/header-links.pug
 
-html
-    head
-        title= word + ' | reallybigdictionary'
-        headerLinks
-    body
-        main(class='content')
-            div(class='text-center')
-                div(id='hidden-word', class='word hidden inline-block-display')= word
-                div(id='word', class='word hidden js-unhide-after-init inline-block-display')= word
-                div(class='pronunciation hidden js-unhide-after-init')= pronunciation.all
-            div(class='definitions-list')
-                each definition in results
-                    div(class='definition hidden js-unhide-after-init')
-                        div(class='definition__part definition__part--' + definition.partOfSpeech)
-                            a(href='/' + definition.partOfSpeech)= definition.partOfSpeech
-                        div(class='definition__text')
-                            +linkifier(definition.definition)
-        footer(class='text-center')
-            +linkifier('made by')
-            a(href='http://alexbainter.com')= 'alex bainter'
-        script(src='/build/bundle.js')
-        script(src='/google-analytics.js')
+block variables
+    title = word
+
+block content
+    div(class='text-center')
+        div(id='hidden-word', class='word hidden inline-block-display')= word
+        div(id='word', class='word hidden js-unhide-after-init inline-block-display')= word
+        div(class='pronunciation hidden js-unhide-after-init')= pronunciation.all
+    div(class='definitions-list')
+        each definition in results
+            div(class='definition hidden js-unhide-after-init')
+                div(class='definition__part definition__part--' + definition.partOfSpeech)
+                    a(href='/' + definition.partOfSpeech)= definition.partOfSpeech
+                div(class='definition__text')
+                    +linkifier(definition.definition)

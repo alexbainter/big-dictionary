@@ -1,8 +1,8 @@
-include ./mixins/header-links.pug
+extends layout.pug
 
-html
-    head
-        title reallybigdictionary
-        headerLinks
-    body
-        
+block variables
+    title = 'Too Many Requests'
+
+block content
+    div(class='text-center')
+        p You've made too many requests too quickly. Please try again later.
