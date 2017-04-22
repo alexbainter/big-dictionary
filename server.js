@@ -1,9 +1,17 @@
 const express = require('express');
 const compression = require('compression');
+const throttle = require('express-throttle');
 const { getDefinition } = require('./lib/dictionary-integration');
 const greetings = require('./lib/greetings');
 const app = express();
 const port = process.env.PORT || 8080;
+const throttleOptions = {
+    burst: '50',
+    period: 'hour',
+    on_throttled: (req, res, next, bucket) => {
+        
+    }
+}
 
 app.set('views', './views');
 app.set('view engine', 'pug');
