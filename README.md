@@ -7,6 +7,17 @@ You should be able to view the live site at [reallybigdictionary.com](http://rea
 ### Prerequisites
 You will need to install the latest [Node.js](https://nodejs.org/en/) to run the site locally.
 
+You will also need to create an account at the [Mashape Marketplace](https://market.mashape.com/) to get an API key for the [Words API](https://www.wordsapi.com/).
+With your Words API key, create a file in the `config` directory called `private.config.js`.
+Have this file export your key like so:
+```javascript
+const config = {
+    mashapeKey: 'your_api_key_here'
+};
+
+module.exports = config;
+```
+
 ### Steps
 1. Clone the repository and navigate to it.
 1. Run `npm install` from a command prompt.
