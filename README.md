@@ -1,7 +1,7 @@
 # big-dictionary
 This is a little site I made for fun. It displays definitions for words, and allows users to click any word on the site to see that word's definition.
 
-You should be able to view the site live at [reallybigdictionary.com](reallybigdictionary.com).
+You should be able to view the site live at [reallybigdictionary.com](http://reallybigdictionary.com).
 
 ## Installation
 ### Prerequisites
