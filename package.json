@@ -4,7 +4,8 @@
   "description": "someth",
   "scripts": {
     "dev": "concurrently \"webpack --watch \" \"node server\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "webpack && git push heroku master"
   },
   "author": "Alex Bainter",
   "license": "ISC",
